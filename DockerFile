@@ -1,0 +1,17 @@
+# Start with a Base Image
+FROM python:3.9-slim
+
+# Set a Working Directory
+WORKDIR /app
+
+# Copy Application Files
+COPY . /app
+
+# Install Dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose Ports
+EXPOSE 5000
+
+# Define the Command to Run the App
+CMD [ "python" , "app.py" ]
